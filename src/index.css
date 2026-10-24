@@ -1,0 +1,91 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background-color: #F4F1DE; /* Soft Sand */
+    color: #3D405B;            /* Dark Slate */
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    min-height: 100vh;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'DM Serif Display', Georgia, serif;
+    font-weight: 400;
+    color: #3D405B;
+  }
+}
+
+@layer components {
+  /* ─── Buttons ─── */
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 font-semibold text-sm rounded-btn transition-all duration-200;
+  }
+
+  .btn-primary {
+    @apply btn bg-clay-500 text-white shadow-soft hover:bg-clay-600 hover:-translate-y-0.5 hover:shadow-card;
+  }
+
+  .btn-secondary {
+    @apply btn bg-white text-slate border border-line shadow-soft hover:border-clay-500 hover:text-clay-500 hover:-translate-y-0.5;
+  }
+
+  .btn-teal {
+    @apply btn bg-teal-500 text-white shadow-soft hover:bg-teal-600 hover:-translate-y-0.5;
+  }
+
+  .btn-ghost {
+    @apply btn bg-transparent text-slate hover:bg-surface-tint;
+  }
+
+  /* ─── Cards ─── */
+  .card {
+    @apply bg-white rounded-card border border-line shadow-soft p-6;
+  }
+
+  .card-hover {
+    @apply hover:-translate-y-1 hover:shadow-card hover:border-clay-400 transition-all duration-300;
+  }
+
+  /* ─── Inputs ─── */
+  .input {
+    @apply w-full bg-white border border-line rounded-btn px-4 py-3 text-sm text-slate placeholder:text-muted focus:outline-none focus:border-clay-500 focus:ring-4 focus:ring-clay-500/10 transition-all;
+  }
+
+  /* ─── Labels & Badges ─── */
+  .label {
+    @apply block text-[11px] font-bold tracking-widest text-muted uppercase mb-2;
+  }
+
+  .badge {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-pill text-xs font-semibold;
+  }
+
+  .badge-clay {
+    @apply badge bg-clay-50 text-clay-600;
+  }
+
+  .badge-teal {
+    @apply badge bg-teal-50 text-teal-600;
+  }
+
+  .badge-gray {
+    @apply badge bg-surface-tint text-muted border border-line;
+  }
+
+  /* ─── Navigation Chips ─── */
+  .chip {
+    @apply inline-flex items-center gap-2 px-4 py-2 rounded-pill text-sm font-semibold bg-white border border-line text-slate cursor-pointer transition-all hover:border-clay-500 hover:text-clay-500;
+  }
+
+  .chip-active {
+    @apply bg-clay-500 text-white border-clay-500 hover:bg-clay-600 hover:text-white shadow-soft;
+  }
+}
